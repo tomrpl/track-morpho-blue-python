@@ -1,10 +1,5 @@
-from decimal import Decimal, getcontext
-
-# Set precision
-getcontext().prec = 18
-
 def pow10(exponent):
-    return 10 ** Decimal(exponent)
+    return 10 ** exponent
 
 WAD = pow10(18)
 
@@ -23,7 +18,9 @@ def mul_div_down(x, y, d):
     return (x * y) // d
 
 def mul_div_up(x, y, d):
-    return (x * y + (d - Decimal('1'))) // d
+    if d == 0:
+        raise ZeroDivisionError("Attempt to divide by zero in mul_div_up function")
+    return (x * y + (d - 1)) // d
 
 def min_(a, b):
     return min(a, b)
