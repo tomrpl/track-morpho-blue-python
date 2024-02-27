@@ -1,4 +1,5 @@
 # fetcher.py
+
 import json
 from .types import MarketParams, MarketState, PositionUser
 from utils.maths import w_div_down, w_div_up, w_taylor_compounded, w_mul_down

@@ -1,3 +1,5 @@
+# maths.py
+
 def pow10(exponent):
     return 10 ** exponent
 
